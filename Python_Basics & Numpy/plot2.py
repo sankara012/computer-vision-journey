@@ -1,0 +1,15 @@
+import numpy as np
+import matplotlib.pyplot as plt
+arr = np.random.random((100, 100))
+plt.imshow(arr)
+plt.title('Original Image')
+plt.subplot(121)
+plt.imshow(arr, cmap='gray')
+plt.title('Noisy Image')
+plt.subplot(122)
+plt.title('Noisy Image1')
+plt.subplot(122)
+plt.imshow(arr, cmap='gray')
+plt.title('Noisy Image2')
+plt.colorbar()
+plt.show()
