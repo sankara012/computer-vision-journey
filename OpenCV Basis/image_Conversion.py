@@ -23,9 +23,12 @@ cv2.destroyAllWindows()
 """The Grayscale image"""
 cv2.imshow("Grayscale Image",Gray_image)
 cv2.waitKey(0)
+cv2.imwrite("Grayscale_Image.png",Gray_image)
 cv2.destroyAllWindows()
 
 """The HSV image"""
 cv2.imshow("HSV Image",HSV_image)
 cv2.waitKey(0)
+cv2.imwrite("HSV_Image.png",HSV_image)
+cv2.destroyAllWindows()
 cv2.destroyAllWindows()
