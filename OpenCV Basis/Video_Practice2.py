@@ -12,6 +12,9 @@ height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
 print("Total frames:", total_frames)
 print("FPS:", fps)
 print("Resolution:", width, "x", height)
+if fps > 0:
+    duration = total_frames / fps
+    print(f"Duration: {duration:.2f} seconds")
 while True:
     ret, frame = cap.read()
     if not ret:
