@@ -1,18 +1,20 @@
-###DAY 18
-##Practice 2
 import cv2
+
 cap = cv2.VideoCapture("video2.mp4")
-total_frames = cap.get(cv2.CAP_PROP_FRAME_COUNT) #Counting the total number of frames
+
 fps = cap.get(cv2.CAP_PROP_FPS)
-print("Total frames:", total_frames)
-print("FPS:", fps)
+delay = int(1000 / fps)          # ms per frame, about 41 at 24 FPS
 
 while True:
-    ret,frame = cap.read()
-    if ret == False:
-        break;
-    cv2.imshow("Video",frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    ret, frame = cap.read()
+    if not ret:
         break
+
+    frame_small = cv2.resize(frame, None, fx=0.5, fy=0.5)
+    cv2.imshow("Video Frame", frame_small)
+
+    if cv2.waitKey(delay) & 0xFF == ord('q'):
+        break
+
 cap.release()
 cv2.destroyAllWindows()
