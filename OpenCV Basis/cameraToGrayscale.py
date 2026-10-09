@@ -3,6 +3,8 @@
 import cv2
 """Initialize capturing video from camera"""
 cap = cv2.VideoCapture(0)
+
+#If the camera can’t open at all (for example Zoom is using it
 if not cap.isOpened():
     print("Cannot open camera")
     exit()
