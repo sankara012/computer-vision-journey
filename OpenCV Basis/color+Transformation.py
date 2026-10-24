@@ -6,14 +6,14 @@ import cv2
 img = cv2.imread('cat.png')
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
-# Extract hue channel
+# Extract saturation channel
 s_channel = hsv[:, :, 1]
 
-# Resize the hue channel
+# Resize the saturation channel
 resized_saturation = cv2.resize(s_channel, (200, 200), interpolation=cv2.INTER_LINEAR)
 
 cv2.imshow("Original image", img)
 cv2.imshow("Saturation Channel", s_channel)
-cv2.imshow('Resized Hue Channel', resized_saturation)
+cv2.imshow('Resized Saturation Channel', resized_saturation)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
