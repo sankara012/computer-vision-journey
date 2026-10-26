@@ -13,6 +13,7 @@ Computer Vision, Machine Learning, and eventually robotics.
 <img width="1266" height="591" alt="image" src="https://github.com/user-attachments/assets/cb00720f-a6e7-4dca-a084-a3eae30e54d1" />
 alt="image" src="https://github.com/user-attachments/assets/bea86df0-b052-48e5-9ac0-28ee6307dc87" />
 <img width="811" height="465" alt="image" src="https://github.com/user-attachments/assets/664885a1-2827-4c27-9c59-71d0a35db5cf" />
+<img width="481" height="386" alt="image" src="https://github.com/user-attachments/assets/00171e08-d7de-4ce9-8cd1-2f5a5a4c2dd6" />
 
 
 
