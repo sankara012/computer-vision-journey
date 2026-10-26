@@ -7,20 +7,22 @@ import cv2
 # Store click points here. Each webcam frame is a NEW image, so drawing
 # only inside the callback would disappear on the next cap.read().
 circles = []
+rectangles = []
 
 
 def on_mouse(event, x, y, flags, param):
     # OpenCV calls this function for every mouse event on the named window.
     if event == cv2.EVENT_LBUTTONDOWN:
         circles.append((x, y))
-
+    elif event == cv2.EVENT_RBUTTONDOWN:
+        rectangles.append((x, y))
 
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Cannot open camera")
     exit()
 
-window_name = "Click to draw circles (c=clear, q=quit)"
+window_name = "Click to draw circles and rectangles (c=clear, q=quit)"
 cv2.namedWindow(window_name)
 cv2.setMouseCallback(window_name, on_mouse)
 
@@ -34,11 +36,23 @@ while True:
 
     cv2.putText(
         frame,
-        "Left click: draw  |  c: clear  |  q: quit",
+        "Left click: draw a circle |  c: clear  |  q: quit",
         (10, 30),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.6,
         (0, 255, 255),
+        2,
+    )
+
+    for (cx, cy) in rectangles:
+        cv2.rectangle(frame, (cx, cy), (cx + 30, cy + 30), (0, 0, 255), 2)
+    cv2.putText(
+        frame,
+        "Right click: draw rectangle |  c: clear  |  q: quit",
+        (10, 60),
+        cv2.FONT_HERSHEY_SIMPLEX,
+        0.6,
+        (155, 0, 255),
         2,
     )
 
@@ -49,6 +63,7 @@ while True:
         break
     if key == ord("c"):
         circles.clear()
+        rectangles.clear()
 
 cap.release()
 cv2.destroyAllWindows()
