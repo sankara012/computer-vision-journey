@@ -32,9 +32,12 @@ while True:                                                                     
 
     row = np.hstack((frame, frame_cut))                                             #STEP6
     cv2.imshow("Original frame | Masked Frame", row)
-    if cv2.waitKey(1) & 0xFF == ord('q'):                                           #STEP7
+    key = cv2.waitKey(1) & 0xFF
+    if key == ord('q'):
         break
+    elif key == ord('s'):
+        cv2.imwrite("BlueMask.png", row)            # To save the blue mask frame
+        print("Saved BlueMask.png")
 
 cap.release()
 cv2.destroyAllWindows()
-cv2.imwrite("BlueMask.png", row)
