@@ -1,4 +1,4 @@
-##DAY38:Color Masks with inRange
+##DAY39:Color Masks with inRange
 ##Challenge: Isolate the teal body of the dolphin, then the orange brush; show the masks next to the originals.
 
 import cv2
