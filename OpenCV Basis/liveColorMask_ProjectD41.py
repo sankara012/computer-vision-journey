@@ -28,6 +28,8 @@ while True:                                                                     
 
     blue_mask = cv2.inRange(hsv, (101, 100, 60), (130, 255, 255))     #STEP4
 
+
+
     frame_cut = cv2.bitwise_and(frame, frame, mask=blue_mask)                       #STEP5
 
     row = np.hstack((frame, frame_cut))                                             #STEP6
